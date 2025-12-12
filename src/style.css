@@ -1,11 +1,11 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #1a1a1a;
+  background-color: #f5f5f5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,84 +13,218 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#app {
+  min-height: 100vh;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+  color: white;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.subtitle {
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .card {
-  padding: 2em;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.read-the-docs {
-  color: #888;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.refresh-btn {
+  background: #2d3436;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background 0.2s;
 }
 
-@media (prefers-color-scheme: light) {
+.refresh-btn:hover {
+  background: #636e72;
+}
+
+#content {
+  padding: 1rem;
+}
+
+.page-list {
+  list-style: none;
+}
+
+.page-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.page-item:last-child {
+  border-bottom: none;
+}
+
+.page-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+  border-radius: 6px;
+}
+
+.page-item a:hover {
+  background: #f8f9fa;
+}
+
+.page-title {
+  font-weight: 500;
+  color: #2d3436;
+}
+
+.page-date {
+  font-size: 0.85rem;
+  color: #636e72;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #636e72;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #d63031;
+}
+
+.error-details {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #636e72;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #636e72;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #636e72;
+  font-size: 0.8rem;
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #e0e0e0;
+    background-color: #1a1a1a;
   }
-  a:hover {
-    color: #747bff;
+
+  .card {
+    background: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
-  button {
-    background-color: #f9f9f9;
+
+  .card-header {
+    border-bottom-color: #404040;
+  }
+
+  .page-item {
+    border-bottom-color: #404040;
+  }
+
+  .page-item a:hover {
+    background: #3d3d3d;
+  }
+
+  .page-title {
+    color: #e0e0e0;
+  }
+
+  .page-date {
+    color: #a0a0a0;
+  }
+
+  .loading,
+  .no-data {
+    color: #a0a0a0;
+  }
+
+  footer {
+    color: #808080;
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .page-item a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 }
