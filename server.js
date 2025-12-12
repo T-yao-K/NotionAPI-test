@@ -89,6 +89,9 @@ app.listen(PORT, () => {
   console.log(`サーバーが起動しました: http://localhost:${PORT}`);
   console.log('');
   console.log('Notion API 設定状況:');
-  console.log(`  NOTION_API_KEY: ${process.env.NOTION_API_KEY ? '設定済み' : '未設定'}`);
+  const apiKey = process.env.NOTION_API_KEY || '';
+  console.log(`  NOTION_API_KEY: ${apiKey ? '設定済み' : '未設定'}`);
+  console.log(`  APIキー先頭15文字: ${apiKey.substring(0, 15)}...`);
+  console.log(`  APIキー長さ: ${apiKey.length}文字`);
   console.log(`  NOTION_DATABASE_ID: ${process.env.NOTION_DATABASE_ID ? '設定済み' : '未設定'}`);
 });
