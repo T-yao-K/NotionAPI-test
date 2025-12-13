@@ -109,3 +109,8 @@ fetch('/api/pages') notion.databases.query()
 - インテグレーションの接続: Notion のデータベースページで、作成したインテグレーションを「接続」する必要がある
 - プロパティ名の一致: sorts で指定するプロパティ名は、Notion データベースの実際のプロパティ名と一致させる必要がある（例：日付）
 -  ページネーション: 100 件以上のデータがある場合は start_cursor を使ったページネーションが必要
+
+<img width="685" height="787" alt="image" src="https://github.com/user-attachments/assets/9ed2c389-adc9-4952-866a-1cd660d5e0c9" />
+<img width="693" height="900" alt="image" src="https://github.com/user-attachments/assets/8dc473b8-c714-4b8a-bc65-e594eda82201" />
+
+
