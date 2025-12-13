@@ -93,7 +93,7 @@ const titleProperty = Object.values(page.properties).find(
 
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐  
 │ フロントエンド │────▶│ Express サーバー │────▶│ Notion API │  
-│ (main.ts) │ │ (server.js) │ │ │  
+│ (main.ts)       │ │ (server.js)     │ │                  │  
 └─────────────────┘ └─────────────────┘ └─────────────────┘   
 fetch('/api/pages') notion.databases.query()  
 
