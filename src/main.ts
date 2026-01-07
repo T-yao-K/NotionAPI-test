@@ -14,7 +14,7 @@ interface ApiResponse {
 }
 
 // APIのベースURL（開発時はViteのプロキシ、本番時は同一オリジン）
-const API_BASE = import.meta.env.DEV ? 'http://localhost:3000' : '';
+const API_BASE = 'https://hspr4n9n67.execute-api.ap-southeast-2.amazonaws.com';
 
 // 日付をフォーマット
 function formatDate(dateString: string | null): string {
@@ -29,7 +29,7 @@ function formatDate(dateString: string | null): string {
 
 // ページ一覧を取得
 async function fetchPages(): Promise<NotionPage[]> {
-  const response = await fetch(`${API_BASE}/api/pages`);
+  const response = await fetch(`${API_BASE}/pages`);
   const data: ApiResponse = await response.json();
 
   if (data.error) {
@@ -48,8 +48,8 @@ function renderPages(pages: NotionPage[]): string {
   return `
     <ul class="page-list">
       ${pages
-        .map(
-          (page) => `
+      .map(
+        (page) => `
         <li class="page-item">
           <a href="${page.url}" target="_blank" rel="noopener noreferrer">
             <span class="page-title">${page.title}</span>
@@ -57,8 +57,8 @@ function renderPages(pages: NotionPage[]): string {
           </a>
         </li>
       `
-        )
-        .join('')}
+      )
+      .join('')}
     </ul>
   `;
 }
